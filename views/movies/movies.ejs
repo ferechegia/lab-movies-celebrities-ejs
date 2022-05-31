@@ -1,0 +1,19 @@
+<h2>Show all Movies! </h2>
+
+<div>
+    <% movies.forEach(({ name, occupation, catchPhrase, _id }) => { %>
+      <div style= 'border: 2px solid black; width: 400px; margin: 20px;'>
+        <h4><strong>Name: <%= name  %> </strong></h4>
+        <h5>Occupation: <%= occupation  %> </h5>
+        <h5>Catchphrase: <%= catchPhrase %> </h5>
+        <br/>
+            <a href="/movies/<%= _id %>/edit">Edit details</a>
+        <br/>
+        <form action="/movies/<%= _id %>/delete" method="POST">
+            <button type="submit">Delete</button>
+        </form>    
+      </div>   
+      <% }) %>
+      <br/>
+</div>
+<br/>
